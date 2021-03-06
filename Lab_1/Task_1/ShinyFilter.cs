@@ -13,10 +13,12 @@ namespace Task_1
     MedianFilter filter1;
     SobelXFilter filter2;
     SobelYFilter filter3;
+    protected int rad;
 
-    public ShinyFilter()
+    public ShinyFilter(int rad)
     {
-      filter1 = new MedianFilter();
+      this.rad = rad;
+      filter1 = new MedianFilter(4);
       filter2 = new SobelXFilter();
       filter3 = new SobelYFilter();
     }
@@ -83,8 +85,8 @@ namespace Task_1
     {
       Color sourceColor = sourceImage.GetPixel(x, y);
 
-      int radMin = -1;
-      int radMax = 1;
+      int radMin = -rad;
+      int radMax = rad;
 
       List<int> RValues = new List<int>();
       List<int> GValues = new List<int>();

@@ -161,7 +161,7 @@ namespace Task_1
     {
       if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
       {
-        Filters filter = new MedianFilter();
+        Filters filter = new MedianFilter(8);
         backgroundWorker1.RunWorkerAsync(filter);
       }
     }
@@ -313,7 +313,7 @@ namespace Task_1
     {
       if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
       {
-        Filters filter = new ShinyFilter();
+        Filters filter = new ShinyFilter(1);
         backgroundWorker1.RunWorkerAsync(filter);
       }
     }

@@ -9,13 +9,18 @@ namespace Task_1
 {
   class MedianFilter : Filters
   {
+    protected int rad;
 
+    public MedianFilter(int rad)
+    {
+      this.rad = rad;
+    }
     internal override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
     {
       Color sourceColor = sourceImage.GetPixel(x, y);
 
-      int radMin = -2;
-      int radMax = 2;
+      int radMin = -(rad / 2);
+      int radMax = rad / 2;
 
       List<int> RValues = new List<int>();
       List<int> GValues = new List<int>();
