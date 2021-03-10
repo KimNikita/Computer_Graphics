@@ -110,7 +110,8 @@ namespace Task_1
         {
           for (int y = 0; y < currentImage.Height; y++)
           {
-            brightsCount[(int)(currentImage.GetPixel(x, y).GetBrightness() * 255)]++;
+            int bright = (int)(currentImage.GetPixel(x, y).R * 0.212 + currentImage.GetPixel(x, y).G * 0.715 + currentImage.GetPixel(x, y).B * 0.072);
+            brightsCount[bright]++;
           }
         }
         histogram.Close();
