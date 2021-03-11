@@ -162,7 +162,7 @@ namespace Task_1
     {
       if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
       {
-        Filters filter = new MedianFilter(8);
+        Filters filter = new MedianFilter(2);
         backgroundWorker1.RunWorkerAsync(filter);
       }
     }
@@ -256,20 +256,11 @@ namespace Task_1
       }
     }
 
-    private void поОсиXToolStripMenuItem_Click(object sender, EventArgs e)
+    private void фильтрСобеляToolStripMenuItem_Click(object sender, EventArgs e)
     {
       if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
       {
-        Filters filter = new SobelXFilter();
-        backgroundWorker1.RunWorkerAsync(filter);
-      }
-    }
-
-    private void поОсиYToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-      if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
-      {
-        Filters filter = new SobelYFilter();
+        Filters filter = new SobelFilter();
         backgroundWorker1.RunWorkerAsync(filter);
       }
     }
@@ -292,20 +283,11 @@ namespace Task_1
       }
     }
 
-    private void поОсиXToolStripMenuItem1_Click(object sender, EventArgs e)
+    private void фильтрПриToolStripMenuItem_Click(object sender, EventArgs e)
     {
       if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
       {
-        Filters filter = new PruitXFilter();
-        backgroundWorker1.RunWorkerAsync(filter);
-      }
-    }
-
-    private void поОсиYToolStripMenuItem1_Click(object sender, EventArgs e)
-    {
-      if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
-      {
-        Filters filter = new PruitYFilter();
+        Filters filter = new PruitFilter();
         backgroundWorker1.RunWorkerAsync(filter);
       }
     }
@@ -319,20 +301,11 @@ namespace Task_1
       }
     }
 
-    private void поОсиXToolStripMenuItem2_Click(object sender, EventArgs e)
+    private void фильтШарраToolStripMenuItem_Click(object sender, EventArgs e)
     {
       if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
       {
-        Filters filter = new SharXFilter();
-        backgroundWorker1.RunWorkerAsync(filter);
-      }
-    }
-
-    private void поОсиYToolStripMenuItem2_Click(object sender, EventArgs e)
-    {
-      if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
-      {
-        Filters filter = new SharYFilter();
+        Filters filter = new SharFilter();
         backgroundWorker1.RunWorkerAsync(filter);
       }
     }
