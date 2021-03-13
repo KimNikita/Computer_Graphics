@@ -29,13 +29,13 @@ namespace Task_1
 
         for (int x = 1; x < sourceImage.Width - 1; x++)
         {
-          int av = 255;
+          int bright = 255;
           int im = 0, jm = 0;
           for (int j = -1; j <= 1; j++)
             for (int i = -1; i <= 1; i++)
-              if (mask[1 + i, 1 + j] == 1 && Average(sourceImage.GetPixel(x + i, y + j)) < av)
+              if (mask[1 + i, 1 + j] == 1 && Bright(sourceImage.GetPixel(x + i, y + j)) < bright)
               {
-                av = Average(sourceImage.GetPixel(x + i, y + j));
+                bright = Bright(sourceImage.GetPixel(x + i, y + j));
                 im = i;
                 jm = j;
               }

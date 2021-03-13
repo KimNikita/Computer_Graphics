@@ -22,9 +22,9 @@ namespace Task_1
       Color sourceColor = sourceImage.GetPixel(x, y);
       Color resultColor;
 
-      float newBrightness = (sourceColor.GetBrightness() - image.minBright)*255 / (image.maxBright - image.minBright);
+      float newBrightness = Clamp((int)(sourceColor.R * 0.299 + sourceColor.G * 0.587 + sourceColor.B * 0.114 - image.minBright), 0, 255) * 255 / (image.maxBright - image.minBright);
 
-      resultColor = Color.FromArgb(Clamp(sourceColor.R + (int)newBrightness,0,255), Clamp(sourceColor.G + (int)newBrightness,0,255), Clamp(sourceColor.B + (int)newBrightness,0,255));
+      resultColor = Color.FromArgb(Clamp(sourceColor.R + (int)newBrightness, 0, 255), Clamp(sourceColor.G + (int)newBrightness, 0, 255), Clamp(sourceColor.B + (int)newBrightness, 0, 255));
 
       return resultColor;
     }
