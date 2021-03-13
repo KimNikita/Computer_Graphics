@@ -11,28 +11,25 @@ namespace Task_1
   class ShinyFilter : Filters
   {
     MedianFilter filter1;
-    SobelXFilter filter2;
-    SobelYFilter filter3;
+    SobelFilter filter2;
     protected int rad;
 
     public ShinyFilter(int rad)
     {
       this.rad = rad;
-      filter1 = new MedianFilter(4);
-      filter2 = new SobelXFilter();
-      filter3 = new SobelYFilter();
+      filter1 = new MedianFilter(2);
+      filter2 = new SobelFilter();
     }
 
     public override Bitmap processImage(Bitmap sourceImage, BackgroundWorker worker)
     {
       Bitmap temp1Image = new Bitmap(sourceImage.Width, sourceImage.Height);
       Bitmap temp2Image = new Bitmap(sourceImage.Width, sourceImage.Height);
-      Bitmap temp3Image = new Bitmap(sourceImage.Width, sourceImage.Height);
       Bitmap resultImage = new Bitmap(sourceImage.Width, sourceImage.Height);
 
       for (int i = 0; i < sourceImage.Width; i++)
       {
-        worker.ReportProgress((int)((float)i / temp1Image.Width * 25));
+        worker.ReportProgress((int)((float)i / temp1Image.Width * 33));
         if (worker.CancellationPending)
           return null;
 
@@ -44,7 +41,7 @@ namespace Task_1
 
       for (int i = 0; i < sourceImage.Width; i++)
       {
-        worker.ReportProgress((int)((float)i / temp2Image.Width * 25) + 25);
+        worker.ReportProgress((int)((float)i / temp2Image.Width * 33) + 33);
         if (worker.CancellationPending)
           return null;
 
@@ -56,25 +53,13 @@ namespace Task_1
 
       for (int i = 0; i < sourceImage.Width; i++)
       {
-        worker.ReportProgress((int)((float)i / temp3Image.Width * 25) + 50);
+        worker.ReportProgress((int)((float)i / resultImage.Width * 33) + 66);
         if (worker.CancellationPending)
           return null;
 
         for (int j = 0; j < sourceImage.Height; j++)
         {
-          temp3Image.SetPixel(i, j, filter3.calculateNewPixelColor(temp2Image, i, j));
-        }
-      }
-
-      for (int i = 0; i < sourceImage.Width; i++)
-      {
-        worker.ReportProgress((int)((float)i / resultImage.Width * 25) + 75);
-        if (worker.CancellationPending)
-          return null;
-
-        for (int j = 0; j < sourceImage.Height; j++)
-        {
-          resultImage.SetPixel(i, j, calculateNewPixelColor(temp3Image, i, j));
+          resultImage.SetPixel(i, j, calculateNewPixelColor(temp2Image, i, j));
         }
       }
 
