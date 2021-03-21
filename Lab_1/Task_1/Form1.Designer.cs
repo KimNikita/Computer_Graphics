@@ -50,17 +50,11 @@ namespace Task_1
             this.размытиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.фильтрГауссаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.фильтрСобеляToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.поОсиXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.поОсиYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.резкийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.тиснениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.фильтрПриToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.поОсиXToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.поОсиYToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.светящиесяКраяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.фильтШарраToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.поОсиXToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.поОсиYToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.операцииМатморфологииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.задатьМаскуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.расширениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -266,26 +260,10 @@ namespace Task_1
             // 
             // фильтрСобеляToolStripMenuItem
             // 
-            this.фильтрСобеляToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.поОсиXToolStripMenuItem,
-            this.поОсиYToolStripMenuItem});
             this.фильтрСобеляToolStripMenuItem.Name = "фильтрСобеляToolStripMenuItem";
             this.фильтрСобеляToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.фильтрСобеляToolStripMenuItem.Text = "Фильтр Собеля";
-            // 
-            // поОсиXToolStripMenuItem
-            // 
-            this.поОсиXToolStripMenuItem.Name = "поОсиXToolStripMenuItem";
-            this.поОсиXToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
-            this.поОсиXToolStripMenuItem.Text = "По оси X";
-            this.поОсиXToolStripMenuItem.Click += new System.EventHandler(this.поОсиXToolStripMenuItem_Click);
-            // 
-            // поОсиYToolStripMenuItem
-            // 
-            this.поОсиYToolStripMenuItem.Name = "поОсиYToolStripMenuItem";
-            this.поОсиYToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
-            this.поОсиYToolStripMenuItem.Text = "По оси Y";
-            this.поОсиYToolStripMenuItem.Click += new System.EventHandler(this.поОсиYToolStripMenuItem_Click);
+            this.фильтрСобеляToolStripMenuItem.Click += new System.EventHandler(this.фильтрСобеляToolStripMenuItem_Click);
             // 
             // резкийToolStripMenuItem
             // 
@@ -303,26 +281,10 @@ namespace Task_1
             // 
             // фильтрПриToolStripMenuItem
             // 
-            this.фильтрПриToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.поОсиXToolStripMenuItem1,
-            this.поОсиYToolStripMenuItem1});
             this.фильтрПриToolStripMenuItem.Name = "фильтрПриToolStripMenuItem";
             this.фильтрПриToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.фильтрПриToolStripMenuItem.Text = "Фильтр Прюитта";
-            // 
-            // поОсиXToolStripMenuItem1
-            // 
-            this.поОсиXToolStripMenuItem1.Name = "поОсиXToolStripMenuItem1";
-            this.поОсиXToolStripMenuItem1.Size = new System.Drawing.Size(154, 26);
-            this.поОсиXToolStripMenuItem1.Text = "По оси X";
-            this.поОсиXToolStripMenuItem1.Click += new System.EventHandler(this.поОсиXToolStripMenuItem1_Click);
-            // 
-            // поОсиYToolStripMenuItem1
-            // 
-            this.поОсиYToolStripMenuItem1.Name = "поОсиYToolStripMenuItem1";
-            this.поОсиYToolStripMenuItem1.Size = new System.Drawing.Size(154, 26);
-            this.поОсиYToolStripMenuItem1.Text = "По оси Y";
-            this.поОсиYToolStripMenuItem1.Click += new System.EventHandler(this.поОсиYToolStripMenuItem1_Click);
+            this.фильтрПриToolStripMenuItem.Click += new System.EventHandler(this.фильтрПриToolStripMenuItem_Click);
             // 
             // светящиесяКраяToolStripMenuItem
             // 
@@ -333,26 +295,10 @@ namespace Task_1
             // 
             // фильтШарраToolStripMenuItem
             // 
-            this.фильтШарраToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.поОсиXToolStripMenuItem2,
-            this.поОсиYToolStripMenuItem2});
             this.фильтШарраToolStripMenuItem.Name = "фильтШарраToolStripMenuItem";
             this.фильтШарраToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.фильтШарраToolStripMenuItem.Text = "Фильт Шарра";
-            // 
-            // поОсиXToolStripMenuItem2
-            // 
-            this.поОсиXToolStripMenuItem2.Name = "поОсиXToolStripMenuItem2";
-            this.поОсиXToolStripMenuItem2.Size = new System.Drawing.Size(154, 26);
-            this.поОсиXToolStripMenuItem2.Text = "По оси X";
-            this.поОсиXToolStripMenuItem2.Click += new System.EventHandler(this.поОсиXToolStripMenuItem2_Click);
-            // 
-            // поОсиYToolStripMenuItem2
-            // 
-            this.поОсиYToolStripMenuItem2.Name = "поОсиYToolStripMenuItem2";
-            this.поОсиYToolStripMenuItem2.Size = new System.Drawing.Size(154, 26);
-            this.поОсиYToolStripMenuItem2.Text = "По оси Y";
-            this.поОсиYToolStripMenuItem2.Click += new System.EventHandler(this.поОсиYToolStripMenuItem2_Click);
+            this.фильтШарраToolStripMenuItem.Click += new System.EventHandler(this.фильтШарраToolStripMenuItem_Click);
             // 
             // операцииМатморфологииToolStripMenuItem
             // 
