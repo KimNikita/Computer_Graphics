@@ -19,8 +19,8 @@ namespace Task_1
     {
       Color sourceColor = sourceImage.GetPixel(x, y);
 
-      int radMin = -(rad / 2);
-      int radMax = rad / 2;
+      int radMin = -rad;
+      int radMax = rad;
 
       List<int> RValues = new List<int>();
       List<int> GValues = new List<int>();

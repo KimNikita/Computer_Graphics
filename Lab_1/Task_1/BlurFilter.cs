@@ -9,10 +9,10 @@ namespace Task_1
 {
   class BlurFilter : MatrixFilter
   {
-    public BlurFilter()
+    public BlurFilter(int rad)
     {
-      int sizeX = 3;
-      int sizeY = 3;
+      int sizeX = rad*2+1;
+      int sizeY = rad*2+1;
       kernel = new float[sizeX, sizeY];
       for (int i = 0; i < sizeX; i++)
         for (int j = 0; j < sizeY; j++)
