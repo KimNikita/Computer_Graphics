@@ -111,7 +111,8 @@ namespace Task_1
         {
           for (int y = 0; y < currentImage.Height; y++)
           {
-            brightsCount[(int)(currentImage.GetPixel(x, y).GetBrightness() * 255)]++;
+            int bright = (int)(currentImage.GetPixel(x, y).R * 0.299 + currentImage.GetPixel(x, y).G * 0.587 + currentImage.GetPixel(x, y).B * 0.114);
+            brightsCount[bright]++;
           }
         }
         histogram.Close();
@@ -171,17 +172,18 @@ namespace Task_1
     {
       if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
       {
-        minBright = 1;
+        minBright = 255;
         maxBright = 0;
 
         for (int x = 0; x < currentImage.Width; x++)
         {
           for (int y = 0; y < currentImage.Height; y++)
           {
-            if (currentImage.GetPixel(x, y).GetBrightness() > maxBright)
-              maxBright = currentImage.GetPixel(x, y).GetBrightness();
-            if (currentImage.GetPixel(x, y).GetBrightness() < minBright)
-              minBright = currentImage.GetPixel(x, y).GetBrightness();
+            int bright = (int)(currentImage.GetPixel(x, y).R * 0.299 + currentImage.GetPixel(x, y).G * 0.587 + currentImage.GetPixel(x, y).B * 0.114);
+            if (bright > maxBright)
+              maxBright = bright;
+            if (bright < minBright)
+              minBright = bright;
           }
         }
 
@@ -256,20 +258,11 @@ namespace Task_1
       }
     }
 
-    private void поОсиXToolStripMenuItem_Click(object sender, EventArgs e)
+    private void фильтрСобеляToolStripMenuItem_Click(object sender, EventArgs e)
     {
       if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
       {
-        Filters filter = new SobelXFilter();
-        backgroundWorker1.RunWorkerAsync(filter);
-      }
-    }
-
-    private void поОсиYToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-      if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
-      {
-        Filters filter = new SobelYFilter();
+        Filters filter = new SobelFilter();
         backgroundWorker1.RunWorkerAsync(filter);
       }
     }
@@ -292,20 +285,11 @@ namespace Task_1
       }
     }
 
-    private void поОсиXToolStripMenuItem1_Click(object sender, EventArgs e)
+    private void фильтрПриToolStripMenuItem_Click(object sender, EventArgs e)
     {
       if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
       {
-        Filters filter = new PruitXFilter();
-        backgroundWorker1.RunWorkerAsync(filter);
-      }
-    }
-
-    private void поОсиYToolStripMenuItem1_Click(object sender, EventArgs e)
-    {
-      if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
-      {
-        Filters filter = new PruitYFilter();
+        Filters filter = new PruitFilter();
         backgroundWorker1.RunWorkerAsync(filter);
       }
     }
@@ -319,20 +303,11 @@ namespace Task_1
       }
     }
 
-    private void поОсиXToolStripMenuItem2_Click(object sender, EventArgs e)
+    private void фильтШарраToolStripMenuItem_Click(object sender, EventArgs e)
     {
       if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
       {
-        Filters filter = new SharXFilter();
-        backgroundWorker1.RunWorkerAsync(filter);
-      }
-    }
-
-    private void поОсиYToolStripMenuItem2_Click(object sender, EventArgs e)
-    {
-      if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
-      {
-        Filters filter = new SharYFilter();
+        Filters filter = new SharFilter();
         backgroundWorker1.RunWorkerAsync(filter);
       }
     }

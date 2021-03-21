@@ -85,13 +85,16 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GrayWorldFilter.cs" />
+    <Compile Include="PruitFilter.cs" />
     <Compile Include="PruitXFilter.cs" />
     <Compile Include="PruitYFilter.cs" />
     <Compile Include="SepiaFilter.cs" />
+    <Compile Include="SharFilter.cs" />
     <Compile Include="SharpFilter.cs" />
     <Compile Include="SharXFilter.cs" />
     <Compile Include="SharYFilter.cs" />
     <Compile Include="ShinyFilter.cs" />
+    <Compile Include="SobelFilter.cs" />
     <Compile Include="SobelXFilter.cs" />
     <Compile Include="SobelYFilter.cs" />
     <Compile Include="WaveFilter.cs" />

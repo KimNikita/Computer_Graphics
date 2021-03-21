@@ -29,17 +29,21 @@ namespace Task_1
 
         for (int x = 1; x < sourceImage.Width - 1; x++)
         {
-          int av = 0;
-          int im = 0, jm = 0;
+          int maxR = 0;
+          int maxG = 0;
+          int maxB = 0;
           for (int j = -1; j <= 1; j++)
             for (int i = -1; i <= 1; i++)
-              if (mask[1 + i, 1 + j] == 1 && Average(sourceImage.GetPixel(x + i, y + j)) > av)
+              if (mask[1 + i, 1 + j] == 1)
               {
-                av = Average(sourceImage.GetPixel(x + i, y + j));
-                im = i;
-                jm = j;
+                if (sourceImage.GetPixel(x + i, y + j).R > maxR)
+                  maxR = sourceImage.GetPixel(x + i, y + j).R;
+                if (sourceImage.GetPixel(x + i, y + j).G > maxG)
+                  maxG = sourceImage.GetPixel(x + i, y + j).G;
+                if (sourceImage.GetPixel(x + i, y + j).B > maxB)
+                  maxB = sourceImage.GetPixel(x + i, y + j).B;
               }
-          resultImage.SetPixel(x, y, sourceImage.GetPixel(x + im, y + jm));
+          resultImage.SetPixel(x, y, Color.FromArgb(maxR, maxG, maxB));
         }
       }
 

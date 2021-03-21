@@ -95,6 +95,7 @@ namespace Task_1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+
             this.файлToolStripMenuItem,
             this.фильтрыToolStripMenuItem,
             this.операцииМатморфологииToolStripMenuItem,
@@ -244,6 +245,7 @@ namespace Task_1
             this.фильтрПриToolStripMenuItem,
             this.светящиесяКраяToolStripMenuItem,
             this.фильтШарраToolStripMenuItem});
+
             this.матричныеToolStripMenuItem.Name = "матричныеToolStripMenuItem";
             this.матричныеToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.матричныеToolStripMenuItem.Text = "Матричные";
@@ -355,12 +357,14 @@ namespace Task_1
             // операцииМатморфологииToolStripMenuItem
             // 
             this.операцииМатморфологииToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+
             this.задатьМаскуToolStripMenuItem,
             this.расширениеToolStripMenuItem,
             this.сужениеToolStripMenuItem,
             this.открытиеToolStripMenuItem,
             this.закрытиеToolStripMenuItem,
             this.чернаяШляпаToolStripMenuItem});
+
             this.операцииМатморфологииToolStripMenuItem.Name = "операцииМатморфологииToolStripMenuItem";
             this.операцииМатморфологииToolStripMenuItem.Size = new System.Drawing.Size(213, 27);
             this.операцииМатморфологииToolStripMenuItem.Text = "Операции матморфологии";
@@ -430,6 +434,7 @@ namespace Task_1
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.Location = new System.Drawing.Point(8, 12);
@@ -442,6 +447,7 @@ namespace Task_1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+
             this.button1.Location = new System.Drawing.Point(887, 12);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
@@ -581,6 +587,7 @@ namespace Task_1
             this.ResumeLayout(false);
             this.PerformLayout();
 
+
     }
 
     #endregion
@@ -602,8 +609,6 @@ namespace Task_1
     private System.Windows.Forms.ToolStripMenuItem сепияToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem яркийToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem фильтрСобеляToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem поОсиXToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem поОсиYToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem резкийToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem отменитьToolStripMenuItem;
@@ -616,12 +621,8 @@ namespace Task_1
     private System.Windows.Forms.ToolStripMenuItem волныToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem тиснениеToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem фильтрПриToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem поОсиXToolStripMenuItem1;
-    private System.Windows.Forms.ToolStripMenuItem поОсиYToolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem светящиесяКраяToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem фильтШарраToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem поОсиXToolStripMenuItem2;
-    private System.Windows.Forms.ToolStripMenuItem поОсиYToolStripMenuItem2;
     private System.Windows.Forms.ToolStripMenuItem операцииМатморфологииToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem задатьМаскуToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem расширениеToolStripMenuItem;
