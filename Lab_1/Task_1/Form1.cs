@@ -162,7 +162,7 @@ namespace Task_1
     {
       if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
       {
-        Filters filter = new MedianFilter(8);
+        Filters filter = new MedianFilter(radius);
         backgroundWorker1.RunWorkerAsync(filter);
       }
     }
