@@ -26,6 +26,7 @@ namespace Task_1
             Width = d * 30 + 25;
             Height = d * 30 + 90;
             mask = new int[d, d];
+            splitContainer1.Panel1.Controls.Clear();
             for(int i = 0; i < d; i++) 
                 for(int j = 0; j < d; j++)
                 {
