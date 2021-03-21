@@ -9,9 +9,10 @@ namespace Task_1
 {
   class GaussianFilter : MatrixFilter
   {
-    public GaussianFilter()
+    public GaussianFilter(int radius)
     {
-      createGaussianKernel(3, 2);
+            float sigma = 0.3f * (radius - 1) + 0.8f;
+      createGaussianKernel(radius, sigma);
     }
 
     private void createGaussianKernel(int radius, float sigma)

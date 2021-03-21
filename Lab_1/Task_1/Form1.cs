@@ -19,6 +19,7 @@ namespace Task_1
     public int[] brightsCount;
     Form2 histogram;
     Form3 structelem;
+        int radius=1;
     public float minBright, maxBright;
     public float Rav, Gav, Bav, Avg;
     public Random rand;
@@ -241,7 +242,7 @@ namespace Task_1
     {
       if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
       {
-        Filters filter = new BlurFilter();
+        Filters filter = new BlurFilter(radius);
         backgroundWorker1.RunWorkerAsync(filter);
       }
     }
@@ -250,7 +251,7 @@ namespace Task_1
     {
       if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
       {
-        Filters filter = new GaussianFilter();
+        Filters filter = new GaussianFilter(radius);
         backgroundWorker1.RunWorkerAsync(filter);
       }
     }
@@ -374,12 +375,18 @@ namespace Task_1
     {
       if (!backgroundWorker1.IsBusy)
       {
-        structelem.refresh();
+        structelem.refresh(radius);
         structelem.Show();
       }
     }
 
-    private void расширениеToolStripMenuItem_Click(object sender, EventArgs e)
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            label2.Text = trackBar1.Value.ToString();
+            radius = trackBar1.Value;
+        }
+
+        private void расширениеToolStripMenuItem_Click(object sender, EventArgs e)
     {
       if (pictureBox1.Enabled && !backgroundWorker1.IsBusy)
       {
