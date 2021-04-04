@@ -72,7 +72,6 @@ namespace Task_2
           GL.Color3(TransferFunction(value));
           GL.Vertex2(x_coord + 1, y_coord);
         }
-      GL.End();
     }
 
     public void Load2Dexture()
