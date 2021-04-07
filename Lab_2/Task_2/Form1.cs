@@ -108,7 +108,7 @@ namespace Task_2
 
     private void trackBar3_Scroll(object sender, EventArgs e)
     {
-      view.SetTFMax((trackBar2.Value + trackBar3.Value) * 40);
+      view.SetTFWidth((trackBar3.Value) * 40);
     }
 
   }
