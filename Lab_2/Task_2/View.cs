@@ -15,6 +15,8 @@ namespace Task_2
     Bin bin;
     Bitmap textureImage;
     int VBOtexture;
+    int min = 0;
+    int max = 2000;
 
     View(Bin bin)
     {
@@ -41,8 +43,6 @@ namespace Task_2
 
     Color TransferFunction(short value)
     {
-      int min = 0;
-      int max = 2000;
       int newVal = Clamp((value - min) * 255 / (max - min), 0, 255);
       return Color.FromArgb(255, newVal, newVal, newVal);
     }
@@ -104,6 +104,16 @@ namespace Task_2
           int pixelNumber = i + j * bin.X + layerNumber * bin.X * bin.Y;
           textureImage.SetPixel(i, j, TransferFunction(bin.array[pixelNumber]));
         }
+    }
+
+    internal void SetTFMax(int max)
+    {
+      this.max = max;
+    }
+
+    internal void SetTFMin(int min)
+    {
+      this.min = min;
     }
 
     public void DrawTexture()

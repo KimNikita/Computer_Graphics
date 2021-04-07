@@ -101,12 +101,12 @@ namespace Task_2
 
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
-            view.SetTFMin(trackBar2.Value*40); //нужно создать в классе view
+            view.SetTFMin(trackBar2.Value*40);
         }
 
         private void trackBar3_Scroll(object sender, EventArgs e)
         {
-            view.SetTFMax((trackBar2.Value+trackBar3.Value)*40); //нужно создать в классе view
+            view.SetTFMax((trackBar2.Value+trackBar3.Value)*40);
         }
     }
 }
