@@ -12,23 +12,19 @@ namespace Task_2
 {
   class View
   {
-    Bin bin;
     Bitmap textureImage;
     int VBOtexture;
     int min = 0;
     int max = 2000;
 
-    View(Bin bin)
-    {
-      this.bin = bin;
-    }
+    public View() { }
 
     public void SetupView(int width, int height)
     {
       GL.ShadeModel(ShadingModel.Smooth);
       GL.MatrixMode(MatrixMode.Projection);
       GL.LoadIdentity();
-      GL.Ortho(0, bin.X, bin.Y, -1, 1);
+      GL.Ortho(0, Bin.X, 0, Bin.Y, -1, 1);
       GL.Viewport(0, 0, width, height);
     }
 
@@ -51,24 +47,24 @@ namespace Task_2
     {
       GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
       GL.Begin(BeginMode.Quads);
-      for (int x_coord = 0; x_coord < bin.X - 1; x_coord++)
-        for (int y_coord = 0; y_coord < bin.Y - 1; y_coord++)
+      for (int x_coord = 0; x_coord < Bin.X - 1; x_coord++)
+        for (int y_coord = 0; y_coord < Bin.Y - 1; y_coord++)
         {
           short value;
           //1
-          value = bin.array[x_coord + y_coord * bin.X + layerNumber * bin.X * bin.Y];
+          value = Bin.array[x_coord + y_coord * Bin.X + layerNumber * Bin.X * Bin.Y];
           GL.Color3(TransferFunction(value));
           GL.Vertex2(x_coord, y_coord);
           //2
-          value = bin.array[x_coord + (y_coord + 1) * bin.X + layerNumber * bin.X * bin.Y];
+          value = Bin.array[x_coord + (y_coord + 1) * Bin.X + layerNumber * Bin.X * Bin.Y];
           GL.Color3(TransferFunction(value));
           GL.Vertex2(x_coord, y_coord + 1);
           //3
-          value = bin.array[(x_coord + 1) + (y_coord + 1) * bin.X + layerNumber * bin.X * bin.Y];
+          value = Bin.array[(x_coord + 1) + (y_coord + 1) * Bin.X + layerNumber * Bin.X * Bin.Y];
           GL.Color3(TransferFunction(value));
           GL.Vertex2(x_coord + 1, y_coord + 1);
           //4
-          value = bin.array[(x_coord + 1) + y_coord * bin.X + layerNumber * bin.X * bin.Y];
+          value = Bin.array[(x_coord + 1) + y_coord * Bin.X + layerNumber * Bin.X * Bin.Y];
           GL.Color3(TransferFunction(value));
           GL.Vertex2(x_coord + 1, y_coord);
         }
@@ -97,12 +93,12 @@ namespace Task_2
 
     public void generateTextureImage(int layerNumber)
     {
-      textureImage = new Bitmap(bin.X, bin.Y);
-      for (int i = 0; i < bin.X; i++)
-        for (int j = 0; j < bin.Y; j++)
+      textureImage = new Bitmap(Bin.X, Bin.Y);
+      for (int i = 0; i < Bin.X; i++)
+        for (int j = 0; j < Bin.Y; j++)
         {
-          int pixelNumber = i + j * bin.X + layerNumber * bin.X * bin.Y;
-          textureImage.SetPixel(i, j, TransferFunction(bin.array[pixelNumber]));
+          int pixelNumber = i + j * Bin.X + layerNumber * Bin.X * Bin.Y;
+          textureImage.SetPixel(i, j, TransferFunction(Bin.array[pixelNumber]));
         }
     }
 
@@ -126,13 +122,14 @@ namespace Task_2
       GL.TexCoord2(0f, 0f);
       GL.Vertex2(0, 0);
       GL.TexCoord2(0f, 1f);
-      GL.Vertex2(0, bin.Y);
+      GL.Vertex2(0, Bin.Y);
       GL.TexCoord2(1f, 1f);
-      GL.Vertex2(bin.X, bin.Y);
+      GL.Vertex2(Bin.X, Bin.Y);
       GL.TexCoord2(1f, 0f);
-      GL.Vertex2(bin.X, 0);
+      GL.Vertex2(Bin.X, 0);
       GL.End();
       GL.Disable(EnableCap.Texture2D);
     }
+
   }
 }
