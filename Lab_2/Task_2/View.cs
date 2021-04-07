@@ -15,8 +15,7 @@ namespace Task_2
     Bitmap textureImage;
     int VBOtexture;
     int min = 0;
-    int max = 2000;
-
+        int width = 2000;
     public View() { }
 
     public void SetupView(int width, int height)
@@ -39,7 +38,7 @@ namespace Task_2
 
     Color TransferFunction(short value)
     {
-      int newVal = Clamp((value - min) * 255 / (max - min), 0, 255);
+      int newVal = Clamp((value - min) * 255 / (width), 0, 255);
       return Color.FromArgb(255, newVal, newVal, newVal);
     }
 
@@ -102,15 +101,15 @@ namespace Task_2
         }
     }
 
-    internal void SetTFMax(int max)
-    {
-      this.max = max;
-    }
-
     internal void SetTFMin(int min)
     {
       this.min = min;
     }
+
+        internal void SetTFWidth(int width)
+        {
+            this.width = width;
+        }
 
     public void DrawTexture()
     {
