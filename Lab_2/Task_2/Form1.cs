@@ -54,7 +54,7 @@ namespace Task_2
       {
         string str = dialog.FileName;
         bin.readBIN(str);
-        trackBar1.Maximum = Bin.Z;
+        trackBar1.Maximum = Bin.Z-1;
         view.SetupView(glControl1.Width, glControl1.Height);
         loaded = true;
         glControl1.Invalidate();
