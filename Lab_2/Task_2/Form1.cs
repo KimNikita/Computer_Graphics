@@ -54,7 +54,7 @@ namespace Task_2
       {
         string str = dialog.FileName;
         bin.readBIN(str);
-        trackBar1.Maximum = Bin.Z-1;
+        trackBar1.Maximum = Bin.Z - 1;
         view.SetupView(glControl1.Width, glControl1.Height);
         loaded = true;
         glControl1.Invalidate();
@@ -107,12 +107,12 @@ namespace Task_2
 
     private void trackBar2_Scroll(object sender, EventArgs e)
     {
-      view.SetTFMin(trackBar2.Value * 40);
+      view.SetTFMin(trackBar2.Value);
     }
 
     private void trackBar3_Scroll(object sender, EventArgs e)
     {
-      view.SetTFWidth((trackBar3.Value) * 40);
+      view.SetTFWidth((trackBar3.Value) * 20);
     }
 
   }
