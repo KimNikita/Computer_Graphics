@@ -79,6 +79,10 @@ namespace Task_2
           }
           view.DrawTexture();
         }
+        else if (radioButton3.Checked)
+        {
+          view.DrawStrips(currentLayer);
+        }
         glControl1.SwapBuffers();
       }
     }
