@@ -46,10 +46,10 @@ namespace Task_2
     {
       GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
       GL.Begin(BeginMode.Quads);
+      short value;
       for (int x_coord = 0; x_coord < Bin.X - 1; x_coord++)
         for (int y_coord = 0; y_coord < Bin.Y - 1; y_coord++)
         {
-          short value;
           //1
           value = Bin.array[x_coord + y_coord * Bin.X + layerNumber * Bin.X * Bin.Y];
           GL.Color3(TransferFunction(value));
@@ -67,6 +67,47 @@ namespace Task_2
           GL.Color3(TransferFunction(value));
           GL.Vertex2(x_coord + 1, y_coord);
         }
+      GL.End();
+    }
+
+    public void DrawStrips(int layerNumber)
+    {
+      GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+      GL.Begin(BeginMode.QuadStrip);
+      short value;
+      // Первые две точки
+      value = Bin.array[layerNumber * Bin.X * Bin.Y];
+      GL.Color3(TransferFunction(value));
+      GL.Vertex2(0, 0);
+      value = Bin.array[Bin.X + layerNumber * Bin.X * Bin.Y];
+      GL.Color3(TransferFunction(value));
+      GL.Vertex2(0, 1);
+      // Рисуем "змейку"
+      int delta = 1;
+      int y_coord;
+      for (int x_coord = 0; x_coord < Bin.X - 1; x_coord++)
+      {
+        // Изгиб "змейки"
+        y_coord = (delta == 1) ? 0 : Bin.Y - 1;
+        value = Bin.array[(x_coord + 1) + y_coord * Bin.X + layerNumber * Bin.X * Bin.Y];
+        GL.Color3(TransferFunction(value));
+        GL.Vertex2(x_coord + 1, y_coord);
+        value = Bin.array[(x_coord + 1) + (y_coord + delta) * Bin.X + layerNumber * Bin.X * Bin.Y];
+        GL.Color3(TransferFunction(value));
+        GL.Vertex2(x_coord + 1, y_coord + delta);
+        // Вертикальная полоска
+        for (y_coord += delta * 2; y_coord < Bin.Y && y_coord >= 0; y_coord += delta)
+        {
+          value = Bin.array[x_coord + y_coord * Bin.X + layerNumber * Bin.X * Bin.Y];
+          GL.Color3(TransferFunction(value));
+          GL.Vertex2(x_coord, y_coord);
+          value = Bin.array[(x_coord + 1) + y_coord * Bin.X + layerNumber * Bin.X * Bin.Y];
+          GL.Color3(TransferFunction(value));
+          GL.Vertex2(x_coord + 1, y_coord);
+        }
+        // Меняем направление "змейки"
+        delta = delta * -1;
+      }
       GL.End();
     }
 
