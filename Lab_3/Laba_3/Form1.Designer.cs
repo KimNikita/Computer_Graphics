@@ -1,67 +1,66 @@
-﻿
-namespace Laba_3
+﻿namespace Laba_3
 {
-  partial class Form1
-  {
-    /// <summary>
-    /// Обязательная переменная конструктора.
-    /// </summary>
-    private System.ComponentModel.IContainer components = null;
-
-    /// <summary>
-    /// Освободить все используемые ресурсы.
-    /// </summary>
-    /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
-    protected override void Dispose(bool disposing)
+    partial class Form1
     {
-      if (disposing && (components != null))
-      {
-        components.Dispose();
-      }
-      base.Dispose(disposing);
-    }
+        private System.ComponentModel.IContainer components = null;
 
-    #region Код, автоматически созданный конструктором форм Windows
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-    /// <summary>
-    /// Требуемый метод для поддержки конструктора — не изменяйте 
-    /// содержимое этого метода с помощью редактора кода.
-    /// </summary>
-    private void InitializeComponent()
-    {
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+      this.components = new System.ComponentModel.Container();
+      this.timer = new System.Windows.Forms.Timer(this.components);
       this.openGlControl = new OpenTK.GLControl();
       this.SuspendLayout();
+      // 
+      // timer
+      // 
+      this.timer.Enabled = true;
       // 
       // openGlControl
       // 
       this.openGlControl.BackColor = System.Drawing.Color.Black;
-      this.openGlControl.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.openGlControl.Location = new System.Drawing.Point(0, 0);
+      this.openGlControl.Location = new System.Drawing.Point(9, 6);
       this.openGlControl.Margin = new System.Windows.Forms.Padding(1);
       this.openGlControl.Name = "openGlControl";
-      this.openGlControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-      this.openGlControl.Size = new System.Drawing.Size(384, 361);
+      this.openGlControl.Size = new System.Drawing.Size(256, 256);
       this.openGlControl.TabIndex = 0;
       this.openGlControl.VSync = false;
       this.openGlControl.Load += new System.EventHandler(this.openGlControl_Load);
       this.openGlControl.Paint += new System.Windows.Forms.PaintEventHandler(this.openGlControl_Paint);
+      this.openGlControl.Resize += new System.EventHandler(this.openGlControl_Resize);
       // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(384, 361);
+      this.ClientSize = new System.Drawing.Size(275, 272);
       this.Controls.Add(this.openGlControl);
       this.Name = "Form1";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Raytracing";
+      this.ClientSizeChanged += new System.EventHandler(this.Form1_Resize);
       this.ResumeLayout(false);
 
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Timer timer;
+        private OpenTK.GLControl openGlControl;
     }
-
-    #endregion
-
-    private OpenTK.GLControl openGlControl;
-  }
 }
 
